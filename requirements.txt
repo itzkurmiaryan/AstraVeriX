@@ -1,0 +1,6 @@
+torch==2.9.1
+torchvision
+pillow
+opencv-python
+numpy
+scikit-learn

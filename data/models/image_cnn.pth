@@ -1,0 +1,24 @@
+import torch
+from torchvision import transforms
+from PIL import Image
+from utils.image_ai_model import SimpleCNN  # tumhara CNN class
+
+def check_image_ai_fake(image_path):
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = SimpleCNN()
+    model.load_state_dict(torch.load("data/models/image_cnn.pth", map_location=device))
+    model.to(device)
+    model.eval()
+
+    img = Image.open(image_path).convert("RGB")
+    transform = transforms.Compose([
+        transforms.Resize((256, 256)),
+        transforms.ToTensor()
+    ])
+    img_tensor = transform(img).unsqueeze(0).to(device)
+
+    with torch.no_grad():
+        output = model(img_tensor)
+        _, pred = torch.max(output, 1)
+
+    return "LIKELY FAKE" if pred.item() == 1 else "LIKELY REAL"
