@@ -14,7 +14,7 @@ import qrcode
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="RakshakAI – Deepfake Detection",
+    page_title="AstraVeriX – Deepfake Detection",
     page_icon="🛡️",
     layout="wide"
 )
@@ -60,7 +60,7 @@ body {{ background:{bg}; }}
 # ---------------- HEADER ----------------
 st.markdown("""
 <div class="glass">
-    <div class="title">🛡️ RakshakAI</div>
+    <div class="title">🛡️ AstraVeriX</div>
     <p style="text-align:center;color:gray">
         AI vs Real Image Verification • National Security
     </p>
@@ -90,7 +90,7 @@ if uploaded_file:
     # Metadata
     timestamp = datetime.now().strftime("%d %b %Y | %I:%M %p")
     verification_id = str(uuid.uuid4()).split("-")[0].upper()
-    share_link = f"https://rakshakai.streamlit.app/?vid={verification_id}"
+    share_link = f"https://astraverix.streamlit.app/?vid={verification_id}"
 
     col1, col2 = st.columns(2)
 
@@ -178,7 +178,7 @@ if uploaded_file:
             content.append(logo_img)
             content.append(Spacer(1,10))
 
-        content.append(Paragraph("🛡️ RakshaKAI Verification Certificate", title_style))
+        content.append(Paragraph("🛡️ AstraVeriX Verification Certificate", title_style))
         content.append(Spacer(1, 15))
         content.append(PDFImage(image_path, width=250, height=250))
         content.append(Spacer(1, 15))
@@ -216,7 +216,7 @@ if uploaded_file:
         content.append(Spacer(1,15))
 
         content.append(Paragraph(
-            "This certificate is AI-generated using RakshaKAI Deepfake Detection. It is digitally verifiable and protected.",
+            "This certificate is AI-generated using AstraVeriX Deepfake Detection by AlphaAryX (Aryan). It is digitally verifiable and protected.",
             italic_style
         ))
 
@@ -227,7 +227,7 @@ if uploaded_file:
             st.download_button(
                 "📜 Download Premium PDF Certificate",
                 data=f,
-                file_name=f"RakshaKAI_{verification_id}.pdf"
+                file_name=f"AstaVeriX_{verification_id}.pdf"
             )
 
         st.markdown("</div>", unsafe_allow_html=True)
@@ -235,6 +235,6 @@ if uploaded_file:
 # ---------------- FOOTER ----------------
 st.markdown("""
 <div style="text-align:center;color:gray;padding:20px;font-size:14px;">
-© 2025 <b>RakshaKAI</b> | Cyber Security & Deepfake Defense | Made by AlphaAryX (Aryan)
+© 2025 <b>AstraVeriX</b> | Cyber Security & Deepfake Defense | Made by AlphaAryX (Aryan)
 </div>
 """, unsafe_allow_html=True)
