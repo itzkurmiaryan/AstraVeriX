@@ -1,6 +1,7 @@
+streamlit
 torch
 torchvision
-streamlit
 pillow
+reportlab
 matplotlib
-numpy
+qrcode
