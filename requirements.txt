@@ -1,6 +1,6 @@
-torch==2.9.1
+torch
 torchvision
+streamlit
 pillow
-opencv-python
+matplotlib
 numpy
-scikit-learn

@@ -1,0 +1,28 @@
+<div class="card">
+  <h2>Verification Result</h2>
+
+  <img src="/{{ image_path }}" class="result-image"/>
+
+  <p><b>Name:</b> {{ name }}</p>
+  <p><b>Email:</b> {{ email }}</p>
+  <p><b>Result:</b> {{ result }}</p>
+  <p><b>Confidence:</b> {{ confidence }}%</p>
+  <p><b>Verification ID:</b> {{ uid }}</p>
+  <p><b>Timestamp:</b> {{ timestamp }}</p>
+
+  <a href="/download/{{ uid }}" class="btn">Download PDF</a>
+</div>
+<style> body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+</style>
